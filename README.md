@@ -68,3 +68,12 @@ mvn clean install
 ```bash
 docker compose build
 ```
+## Rebuild Docker images
+
+```powershell
+docker compose down
+docker rm -f notification-service
+docker rm -f payment-service
+docker rm -f mongodb
+docker compose up --build
+```
