@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: payment-service
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://admin:password@mongodb:27017/payments-db?authSource=admin}
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.example.paymentservice: DEBUG

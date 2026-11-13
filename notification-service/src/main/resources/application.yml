@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: notification-service
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://admin:password@mongodb:27017/notifications-db?authSource=admin}
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.example.notificationservice: DEBUG
